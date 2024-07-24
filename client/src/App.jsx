@@ -1,3 +1,4 @@
+import Catalog from "./components/catalog/Catalog"
 import Create from "./components/create/Create"
 import Edit from "./components/edit/Edit"
 import Footer from "./components/footer/Footer"
@@ -21,6 +22,7 @@ function App() {
    <PageNotFound/>
    <Create/>
    <Edit/>
+   <Catalog/>
       
     </>
   )

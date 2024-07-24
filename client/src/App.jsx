@@ -1,4 +1,5 @@
 import Create from "./components/create/Create"
+import Edit from "./components/edit/Edit"
 import Footer from "./components/footer/Footer"
 import Header from "./components/header/Header"
 import Home from "./components/home/Home"
@@ -19,6 +20,7 @@ function App() {
    <Register/>
    <PageNotFound/>
    <Create/>
+   <Edit/>
       
     </>
   )

@@ -10,8 +10,6 @@ import Login from "./components/login/Login"
 import PageNotFound from "./components/page-not-found/PageNotFound"
 import Register from "./components/register/Register"
 
-
-
 function App() {
 
   return (

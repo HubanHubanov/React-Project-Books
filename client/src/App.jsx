@@ -1,3 +1,5 @@
+import { Route, Routes } from "react-router-dom"
+
 import Catalog from "./components/catalog/Catalog"
 import Create from "./components/create/Create"
 import Edit from "./components/edit/Edit"
@@ -14,16 +16,19 @@ function App() {
 
   return (
     <>
-   <Header/>
-   <Home/>
-   <Footer/>
-   <Login/>
-   <Register/>
-   <PageNotFound/>
-   <Create/>
-   <Edit/>
-   <Catalog/>
-      
+		<Header/>
+
+		<Routes>
+			<Route path="/" element={< Home />}/>
+			<Route path="/auth/login" element={<Login />} />
+			<Route path="/auth/register" element={<Register />} />
+			<Route path="/books/create" element={<Create />} />
+			<Route path="/books/edit" element={<Edit />} />
+			<Route path="/books/catalog" element={<Catalog />} />
+			<Route path="*" element={<PageNotFound />} />
+		</Routes>        
+
+		<Footer />
     </>
   )
 }

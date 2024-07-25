@@ -25,7 +25,7 @@ export default function BookCatalog() {
         <div className={styles["row"]}>
         <section id="viewCatalog" className="background-img">
 
-           <BookCatalogItem/>
+            {books.map(book => <BookCatalogItem key={book._id} {...book}/>)}
 
              {/* <div className="guest">
                 There are no Hotels found...

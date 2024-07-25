@@ -5,7 +5,7 @@
         "genre": "fantasy",
         "pages": "223",
         "published": "1997",
-        "image": "https://play-lh.googleusercontent.com/SF5BMT_IsoF7GBl4USjTr4CrNvXkFClA26qvzyKX6chRdGaXr6JDvnTVqO3wv2EF161VC2jD80YTedD-6HI",
+        "imageUrl": "https://play-lh.googleusercontent.com/SF5BMT_IsoF7GBl4USjTr4CrNvXkFClA26qvzyKX6chRdGaXr6JDvnTVqO3wv2EF161VC2jD80YTedD-6HI",
         "description": "Harry makes close friends and a few enemies during his first year at the school. With the help of his friends, Ron Weasley and Hermione Granger, he faces an attempted comeback by the dark wizard Lord Voldemort, who killed Harry's parents but failed to kill Harry when he was just 15 months old.",
         "_id": "d953e5fb-a585-4d6b-92d3-ee90697398a0"
 
@@ -16,7 +16,7 @@
         "genre": "Education",
         "pages": "1150",
         "published": "2018",
-        "image": "https://introprogramming.info/wp-content/uploads/2020/02/CSharp-Basics-EN-Cover-3D.png",
+        "imageUrl": "https://introprogramming.info/wp-content/uploads/2020/02/CSharp-Basics-EN-Cover-3D.png",
         "description": "If you are looking for a good computer programming tutorial in Bulgarian, you are at the right Web site. Here you can learn the fundamentals of computer programming. This is a programming tutorial covering the important programming concepts like data structures and algorithms.",
         "_id": "d953e5fb-a585-4d6b-92d3-ee90697398a1"
     },
@@ -27,7 +27,7 @@
     "genre": "Test genre",
     "pages": "100",
     "published": "2000",
-    "image": "https://cdn.pixabay.com/photo/2014/06/03/19/38/road-sign-361514_960_720.png",
+    "imageUrl": "https://cdn.pixabay.com/photo/2014/06/03/19/38/road-sign-361514_960_720.png",
     "description": "Test description",
     "_id": "de6ad1db-1d3a-458f-93d4-aa6bf36f603d"
 }

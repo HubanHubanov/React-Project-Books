@@ -10,7 +10,7 @@ export default function BookCatalog() {
         (async () => {
              const allBooks = await booksService.getAll();
              setBooks(allBooks);
-             console.log(allBooks);
+            
         })()
          
      }, []);
@@ -25,11 +25,12 @@ export default function BookCatalog() {
         <div className={styles["row"]}>
         <section id="viewCatalog" className="background-img">
 
-            {books.map(book => <BookCatalogItem key={book._id} {...book}/>)}
+            {books.length > 0
+                ? books.map(book => <BookCatalogItem key={book._id} {...book}/>)
+                : <div className={styles["no-books"]}>There are no Books</div>
+            }
 
-             {/* <div className="guest">
-                There are no Hotels found...
-            </div> */}
+             
         </section>
         </div>
 

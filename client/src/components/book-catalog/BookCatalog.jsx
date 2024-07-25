@@ -1,6 +1,8 @@
-import styles from "./BookCatalog.module.css"
-import * as booksService from "../../services/booksService"
 import { useEffect, useState } from "react";
+
+import * as booksService from "../../services/booksService"
+import styles from "./BookCatalog.module.css"
+
 import BookCatalogItem from "./book-catalog-item/BookCatalogItem";
 
 export default function BookCatalog() {

@@ -1,8 +1,26 @@
 import styles from "./Catalog.module.css"
-
+import * as booksService from "../../services/booksService"
+import { useEffect, useState } from "react";
 
 export default function Catalog() {
- 
+    const [books, setBooks] = useState([])
+
+    useEffect(() => {
+        (async () => {
+             const allBooks = await booksService.getAll();
+             setBooks(allBooks);
+             console.log(allBooks);
+        })()
+         
+     }, []);
+
+    // useEffect(() => {
+    //     booksService.getAll()
+    //         .then(allBooks => setBooks(allBooks));
+    // }, []);
+
+
+
     return (
         <>
           <div className={styles["background"]}>

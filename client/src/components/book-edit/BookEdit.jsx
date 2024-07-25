@@ -1,4 +1,4 @@
-export default function Edit() {
+export default function BookEdit() {
     return (
         <section id="editBook">
         <h2>Edit book</h2>

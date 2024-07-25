@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom"
 
-import Catalog from "./components/catalog/Catalog"
-import Create from "./components/create/Create"
-import Edit from "./components/edit/Edit"
 import Footer from "./components/footer/Footer"
 import Header from "./components/header/Header"
 import Home from "./components/home/Home"
 import Login from "./components/login/Login"
 import PageNotFound from "./components/page-not-found/PageNotFound"
 import Register from "./components/register/Register"
+import BookCatalog from "./components/book-catalog/BookCatalog"
+import BookCreate from "./components/book-create/BookCreate"
+import BookEdit from "./components/book-edit/BookEdit"
 
 function App() {
 
@@ -20,9 +20,9 @@ function App() {
 			<Route path="/" element={< Home />}/>
 			<Route path="/auth/login" element={<Login />} />
 			<Route path="/auth/register" element={<Register />} />
-			<Route path="/books/create" element={<Create />} />
-			<Route path="/books/edit" element={<Edit />} />
-			<Route path="/books/catalog" element={<Catalog />} />
+			<Route path="/books/create" element={<BookCreate />} />
+			<Route path="/books/edit" element={<BookEdit />} />
+			<Route path="/books/catalog" element={<BookCatalog />} />
 			<Route path="*" element={<PageNotFound />} />
 		</Routes>        
 

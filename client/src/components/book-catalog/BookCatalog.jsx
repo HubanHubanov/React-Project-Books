@@ -1,8 +1,8 @@
-import styles from "./Catalog.module.css"
+import styles from "./BookCatalog.module.css"
 import * as booksService from "../../services/booksService"
 import { useEffect, useState } from "react";
 
-export default function Catalog() {
+export default function BookCatalog() {
     const [books, setBooks] = useState([])
 
     useEffect(() => {

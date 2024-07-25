@@ -1,6 +1,6 @@
-import styles from "./Create.module.css"
+import styles from "./BookCreate.module.css"
 
-export default function Create() {
+export default function BookCreate() {
     return (
    
            <section id="addBook">

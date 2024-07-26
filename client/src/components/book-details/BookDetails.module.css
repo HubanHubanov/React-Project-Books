@@ -3,3 +3,19 @@
     background-color: crimson;
 }
 
+.book-info {
+    font-size: 25px;
+}
+
+.description {
+    font-weight: bold;
+}
+
+.comment-form {
+    font-size: 25px;
+}
+
+.submit-comment {
+        cursor: pointer;
+     
+}

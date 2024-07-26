@@ -12,6 +12,9 @@ export const getAll = async () => {
 
 export const getOne = async (bookId) => {
     const result = await request.get(`${BASE_URl}/${bookId}`)
-    return result
+    return result;
 }
-                      
+
+
+
+                  

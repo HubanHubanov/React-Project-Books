@@ -7,6 +7,11 @@ export const getAll = async () => {
 
     const books = Object.values(result);
 
-    return books
+    return books;
+}
+
+export const getOne = async (bookId) => {
+    const result = await request.get(`${BASE_URl}/${bookId}`)
+    return result
 }
                       

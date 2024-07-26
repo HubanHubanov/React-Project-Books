@@ -9,6 +9,7 @@ import Register from "./components/register/Register"
 import BookCatalog from "./components/book-catalog/BookCatalog"
 import BookCreate from "./components/book-create/BookCreate"
 import BookEdit from "./components/book-edit/BookEdit"
+import BookDetails from "./components/book-details/BookDetails"
 
 function App() {
 
@@ -21,7 +22,8 @@ function App() {
 			<Route path="/auth/login" element={<Login />} />
 			<Route path="/auth/register" element={<Register />} />
 			<Route path="/books/create" element={<BookCreate />} />
-			<Route path="/books/edit" element={<BookEdit />} />
+			<Route path="/books/:bookId/edit" element={<BookEdit />} />
+			<Route path="/books/:bookId/details" element={<BookDetails />}/>
 			<Route path="/books/catalog" element={<BookCatalog />} />
 			<Route path="*" element={<PageNotFound />} />
 		</Routes>        

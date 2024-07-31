@@ -4,23 +4,11 @@ import * as booksService from "../../services/booksService"
 import styles from "./BookCatalog.module.css"
 
 import BookCatalogItem from "./book-catalog-item/BookCatalogItem";
+import { useGetAllBooks } from "../../hooks/useBooks";
 
 export default function BookCatalog() {
-    const [books, setBooks] = useState([])
+    const [books] = useGetAllBooks()
 
-    useEffect(() => {
-        (async () => {
-             const allBooks = await booksService.getAll();
-             setBooks(allBooks);
-            
-        })()
-         
-     }, []);
-
-    // useEffect(() => {
-    //     booksService.getAll()
-    //         .then(allBooks => setBooks(allBooks));
-    // }, []);
     return (
         <>
           <div className={styles["background"]}>

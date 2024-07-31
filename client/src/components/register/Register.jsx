@@ -11,7 +11,7 @@ export default function Register() {
             <input type="password" id="password" name="password" placeholder="Password" />
             <label for="rePassword">Repeat Password:</label>
             <input type="password" id="rePassword" name="rePassword" placeholder="Repeat Password" />
-            <input type="submit" class="register" value="Register" />
+            <input type="submit" className="register" value="Register" />
         </form>
     </section>
     );

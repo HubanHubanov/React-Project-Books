@@ -22,7 +22,7 @@ export default function BookCreate() {
                 <label for="description">Book Description:</label>
                 <textarea placeholder="Description" ></textarea>
 
-                <input type="submit" class="create" value="Add" />
+                <input type="submit" className="create" value="Add" />
             </form>
         </section>
     

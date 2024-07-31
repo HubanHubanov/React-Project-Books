@@ -17,3 +17,20 @@ export function useGetAllBooks () {
 }
 
 
+export function useGetOneBook (bookId) {
+    const [book, setBook] = useState({});
+
+    useEffect(() => {
+        (async () => {
+           const result = await booksService.getOne(bookId)
+            setBook(result)
+        })();
+    }, [bookId]); 
+
+    return [
+        book,
+        setBook
+    ]
+}
+
+

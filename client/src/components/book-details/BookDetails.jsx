@@ -1,22 +1,17 @@
 import { Link, useParams} from "react-router-dom";
-import { useEffect,  useState } from "react";
+import { useState } from "react";
 
 import styles from "./BookDetails.module.css";
-import * as booksService from "../../services/booksService";
 import * as commentsService from "../../services/commentsService";
+import { useGetOneBook } from "../../hooks/useBooks";
 
 export default function BookDetails() {
-    const [book, setBook] = useState({});
+    const {bookId} = useParams()
+    const [book, setBook] = useGetOneBook(bookId);
     const [username, setUsername] = useState("");
     const [comment, setComment] = useState("");
-    const {bookId} = useParams()
   
-    useEffect(() => {
-        (async () => {
-           const result = await booksService.getOne(bookId)
-            setBook(result)
-        })();
-    }, []); 
+   
 
     const commentSubmitHandler = async (e) => {
         e.preventDefault();

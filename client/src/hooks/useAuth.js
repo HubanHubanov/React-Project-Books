@@ -5,10 +5,8 @@ export const useLogin  = () => {
       
            const result = await login(email, password);
 
-           console.log("useAuth -> useLogin -> resullt ->", result);
+           console.log ("result->", result);
            //TODO: update app state
-      
-    
     }
 
     return loginHandler;

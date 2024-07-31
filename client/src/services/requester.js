@@ -5,6 +5,7 @@ async function requester(method, url, data) {
         headers: {}
     };
 
+
     if(method !== "GET" ) {
         options.method = method;
     }

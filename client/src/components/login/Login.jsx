@@ -12,12 +12,13 @@ export default function Login() {
     
     const loginHandler = async ({email, password}) => {
         try {
-            await login(email, password);
+           await login(email, password);
            navigate("/")
         } catch (err) {
-            console.log(err.message);
+           console.log(err.message);
         }
-       }
+       };
+
     const {values, changeHandler, submitHandler} = useForm(initialValues, loginHandler);
 
     return (

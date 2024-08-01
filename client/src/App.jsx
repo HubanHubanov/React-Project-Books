@@ -11,7 +11,8 @@ import BookCatalog from "./components/book-catalog/BookCatalog"
 import BookCreate from "./components/book-create/BookCreate"
 import BookEdit from "./components/book-edit/BookEdit"
 import BookDetails from "./components/book-details/BookDetails"
-import { AuthContext } from "./contexts/authContext"
+import { AuthContext } from "./contexts/AuthContext"
+
 
 function App() {
 	const [authState, setAuthState] = useState({});
@@ -21,11 +22,12 @@ function App() {
 	}
 
 	const contextData = {
+		userId: authState._id,
 		email: authState.email,
 		accesToken: authState.accessToken,
 		isAuthenticated: !!authState.email,
 		changeAuthState
-	}
+	} 
 
   return (
     <AuthContext.Provider value={contextData}>

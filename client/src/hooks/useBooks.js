@@ -33,4 +33,10 @@ export function useGetOneBook (bookId) {
     ]
 }
 
+export function useCreateBook () {
+    const bookCreateHandler = async (bookData) => {
+       await booksService.create(bookData)
+    }
+    return bookCreateHandler;
+}
 

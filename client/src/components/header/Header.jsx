@@ -16,7 +16,7 @@ export default function Header() {
                         ? ( 
                             <div>
                                 <Link to="/books/create" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Create</Link>
-                                <Link to="/auth/logout" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onClick={() => localStorage.clear()}>Logout</Link>
+                                <Link to="/auth/logout" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" >Logout</Link>
                             </div>
                         )
                         : (

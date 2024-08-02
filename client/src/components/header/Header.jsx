@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export default function Header() {
-    const {isAuthenticated, email} = useContext(AuthContext)   
+    const {isAuthenticated, email} = useAuthContext()   
     return (
         <>
         <div className="w3-top">
@@ -12,12 +11,12 @@ export default function Header() {
                     <Link className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"  title="Toggle Navigation Menu"><i className="fa fa-bars"></i></Link>
                     <Link to="/" className="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</Link>
                     <Link to="/books/catalog" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Catalog</Link>
-                    <Link to="/auth/logout" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onClick={() => localStorage.clear()}>Logout</Link>
 
                     {isAuthenticated 
                         ? ( 
                             <div>
                                 <Link to="/books/create" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Create</Link>
+                                <Link to="/auth/logout" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onClick={() => localStorage.clear()}>Logout</Link>
                             </div>
                         )
                         : (

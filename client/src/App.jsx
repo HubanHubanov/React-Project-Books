@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom"
-import { useState } from "react"
 
 import Footer from "./components/footer/Footer"
 import Header from "./components/header/Header"
@@ -11,32 +10,12 @@ import BookCatalog from "./components/book-catalog/BookCatalog"
 import BookCreate from "./components/book-create/BookCreate"
 import BookEdit from "./components/book-edit/BookEdit"
 import BookDetails from "./components/book-details/BookDetails"
-import { AuthContext } from "./contexts/AuthContext"
+import { AuthContextProvider } from "./contexts/AuthContext"
 
 
 function App() {
-	const [authState, setAuthState] = useState({});
-
-	const changeAuthState = (state) => {
-		localStorage.setItem("accessToken", state.accessToken);
-		localStorage.setItem("email", state.email)
-		
-		setAuthState(state);
-	}
-
-	const contextData = {
-		userId: authState._id,
-		email: authState.email,
-		accessToken: authState.accessToken,
-		isAuthenticated: !!authState.email,
-		changeAuthState
-	} 
-
-	console.log("contextData->", contextData);
-	
-
   return (
-    <AuthContext.Provider value={contextData}>
+    <AuthContextProvider>
 		<Header/>
 
 		<Routes>
@@ -51,7 +30,7 @@ function App() {
 		</Routes>        
 
 		<Footer />
-    </AuthContext.Provider>
+    </AuthContextProvider>
   )
 }
 

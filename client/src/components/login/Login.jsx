@@ -3,10 +3,12 @@ import {useNavigate} from "react-router-dom"
 import { useLogin } from "../../hooks/useAuth";
 import useForm from "../../hooks/useForm";
 import styles from "./Login.module.css"
+import { useState } from "react";
 
 const initialValues =  {email: "", password: ""}
 
 export default function Login() {
+    const [error, setError] = useState("")
     const login = useLogin();
     const navigate = useNavigate();
     
@@ -15,6 +17,7 @@ export default function Login() {
            await login(email, password);
            navigate("/")
         } catch (err) {
+            setError(err.message)
            console.log(err.message);
         }
        };
@@ -45,6 +48,13 @@ export default function Login() {
                         value={values.password} 
                         onChange={changeHandler}
                     />
+
+                    {error && (
+                    <div className={styles["error"]}>
+                        {error}
+                    </div>
+                    )}
+
                     <input type="submit" className="login" value="Login" />
                 </form>
         </section>

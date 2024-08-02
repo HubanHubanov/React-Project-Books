@@ -14,11 +14,6 @@ async function requester(method, url, data) {
         if(accessToken) {
             options.headers["X-Authorization"] = accessToken;
         }       
-                    
-    console.log("accessToken->", accessToken);
-    console.log("options->", options);
-    console.log("-------------------------------------");
-            
     
    const response = await fetch(url, options);
    const result = await response.json();

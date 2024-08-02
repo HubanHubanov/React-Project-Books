@@ -18,7 +18,6 @@ export const getOne = async (bookId) => {
 
 export const create = async (bookData) => {
     const createdBook = await request.post(`${BASE_URL}`, bookData);
-    console.log("createdBook at service->", createdBook);
     
     return createdBook;
 

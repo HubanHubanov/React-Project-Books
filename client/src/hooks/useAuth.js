@@ -9,8 +9,6 @@ export const useLogin  = () => {
         const {password: _, ...loginData} = await login(email, password);
 
         changeAuthState(loginData);
-
-        console.log("loginData", loginData);
         
         return loginData
 

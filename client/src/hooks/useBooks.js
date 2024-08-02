@@ -36,12 +36,10 @@ export function useGetOneBook (bookId) {
 export function useCreateBook () {
     const bookCreateHandler = async (bookData) => {
       const createdBook = await booksService.create(bookData)
-       console.log("bookData=>",  bookData);
-       console.log("createdBook", createdBook);
+      
        
        return createdBook
     }
-    console.log("bookCreateHandler", bookCreateHandler());
     return bookCreateHandler;
 }
 

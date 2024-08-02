@@ -23,9 +23,7 @@ export default function BookCreate() {
             
             
             const createdBook = await createBook(values);
-            console.log("try");
-            console.log("values->", values);
-            console.log("createdBook=>",createdBook);
+            
             navigate(`/books/${createdBook._id}/details`);
 
             // const { _id: bookId} = await createBook(values);

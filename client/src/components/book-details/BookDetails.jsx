@@ -41,7 +41,7 @@ export default function BookDetails() {
                 <div>
                     <h1 id="name">{book.title}</h1>
                     <h3 id="author">Author: {book.author}</h3>
-                    <p id="genre">Genre: Sci-fi</p>
+                    <p id="genre">Genre: {book.genre}</p>
                     <p id="pages"><span>Number of pages: {book.pages}</span></p>
                     <p id="published">Year published: {book.published}</p>
                     <label htmlFor="description" className={styles["description"]}>Description:</label>

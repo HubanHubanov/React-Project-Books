@@ -15,7 +15,7 @@ export default function BookEdit() {
             <input type="number" id="published" name="published" placeholder="Year published" />
             <label htmlFor="imageUrl">Image:</label>
             <input type="text" id="imageUrl" name="imageUrl" placeholder="https://..." />
-            <label for="description">Book Description:</label>
+            <label htmlFor="description">Book Description:</label>
             <textarea placeholder="Description" ></textarea>
 
             <input type="submit" className="create" value="Add" />

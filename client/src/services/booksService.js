@@ -16,8 +16,13 @@ export const getOne = async (bookId) => {
     return result;
 }
 
-export const create = (gameData) => request.post(`${BASE_URL}`, gameData)
+export const create = async (bookData) => {
+    const createdBook = await request.post(`${BASE_URL}`, bookData);
+    console.log("createdBook at service->", createdBook);
+    
+    return createdBook;
 
+}
 
 
                   

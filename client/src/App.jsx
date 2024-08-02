@@ -12,22 +12,28 @@ import BookCreate from "./components/book-create/BookCreate"
 import BookEdit from "./components/book-edit/BookEdit"
 import BookDetails from "./components/book-details/BookDetails"
 import { AuthContext } from "./contexts/AuthContext"
-// 
+
 
 function App() {
 	const [authState, setAuthState] = useState({});
 
 	const changeAuthState = (state) => {
+		localStorage.setItem("accessToken", state.accessToken);
+		localStorage.setItem("email", state.email)
+		
 		setAuthState(state);
 	}
 
 	const contextData = {
 		userId: authState._id,
 		email: authState.email,
-		accesToken: authState.accessToken,
+		accessToken: authState.accessToken,
 		isAuthenticated: !!authState.email,
 		changeAuthState
 	} 
+
+	console.log("contextData->", contextData);
+	
 
   return (
     <AuthContext.Provider value={contextData}>

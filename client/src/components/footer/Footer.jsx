@@ -7,13 +7,13 @@ export default function Footer() {
                 <p>© 2024</p>
                 <p>All rights reserved</p>
                 <p>Page Created by Huban Hubanov</p>
-                    <a href="https://softuni.bg" target="_blank">SoftUni</a>
+                    <a to="https://softuni.bg" target="_blank">SoftUni</a>
             </div>
         </footer>
     );
 }
 
 <div>© 2020
-<a href="https://softuni.bg">SoftUni</a>
+<a to="https://softuni.bg">SoftUni</a>
 <p>Created by Huban Hubanov</p>
 </div>

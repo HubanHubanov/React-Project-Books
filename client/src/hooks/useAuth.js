@@ -11,6 +11,8 @@ export const useLogin  = () => {
 
         changeAuthState(loginData);
 
+        console.log("loginData", loginData);
+        
         return loginData
 
     }

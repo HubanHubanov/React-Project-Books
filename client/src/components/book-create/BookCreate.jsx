@@ -9,7 +9,7 @@ const initialValues = {
     author: "",
     genre: "",
     pages: "",
-    piblished: "",
+    published: "",
     imageUrl: "",
     description: ""
 }
@@ -19,10 +19,19 @@ export default function BookCreate() {
     const createBook = useCreateBook();
 
     const createHandler = async (values) => {
-        createBook(values);
         try {
-            const createdBook = await createBook(values)
-            navigate(`/books//${createdBook._id}/details`)
+            
+            
+            const createdBook = await createBook(values);
+            console.log("try");
+            console.log("values->", values);
+            console.log("createdBook=>",createdBook);
+            navigate(`/books/${createdBook._id}/details`);
+
+            // const { _id: bookId} = await createBook(values);
+            // navigate(`/books/${bookId}/details`);    
+
+            
         } catch (err) {
             console.log(err.message);
         }
@@ -76,7 +85,7 @@ export default function BookCreate() {
                 <input 
                     type="number" 
                     id="published" 
-                    name="piblished" 
+                    name="published" 
                     placeholder="Year published"
                     value={values.published}
                     onChange={changeHandler}   

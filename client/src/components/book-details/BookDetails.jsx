@@ -1,37 +1,39 @@
-import { Link, useParams} from "react-router-dom";
-import { useState } from "react";
+import { useParams} from "react-router-dom";
 
 import styles from "./BookDetails.module.css";
-import * as commentsService from "../../services/commentsService";
 import { useGetOneBook } from "../../hooks/useBooks";
+import { useCreateComment, useGetAllComments} from "../../hooks/useComments";
+import useForm from "../../hooks/useForm"
+import { useAuthContext } from "../../contexts/AuthContext";
+
+const initialValues = {
+    comment: ""
+}
 
 export default function BookDetails() {
-    const {bookId} = useParams()
-    const [book, setBook] = useGetOneBook(bookId);
-    const [username, setUsername] = useState("");
-    const [comment, setComment] = useState("");
-  
-   
+    const {bookId} = useParams();
+    const [comments, setComments] = useGetAllComments(bookId); 
+    const createComment = useCreateComment();
+    const [book] = useGetOneBook(bookId);
+    const {isAuthenticated} = useAuthContext()
 
-    const commentSubmitHandler = async (e) => {
-        e.preventDefault();
+    const {values, 
+        changeHandler, 
+        submitHandler
+        } = useForm(initialValues, async ({comment}) => {
+            try {
+              const newComment = await createComment(bookId, comment);
+              
+              setComments(oldComments => [...oldComments, newComment]);
+                
+              
+            } catch (err) {
+                console.log(err.message);
+                //TODO: Show err message on the screen
+            }
+    })
 
-       const newComment = await commentsService.create(bookId, username, comment);
-
-       setBook(prevState => ({
-        ...prevState,   
-        comments: {
-            ...prevState.comments,
-            [newComment._id]: newComment
-        }
-       }));
-
-       setUsername("");
-       setComment("");
-    }   
-    
     return (
-    
         <section className={styles["details-info"]}>
             <div className="book-image">
                 <img src={book.imageUrl} />
@@ -49,18 +51,19 @@ export default function BookDetails() {
                     
                     <div>
                         <h2>Comments:</h2>
-                      
-
+                    
                         <ul >                            
-                        {Object.keys(book.comments || {}).length > 0  
-                           ? Object.values(book.comments).map(comment => (
-                                  
+
+                        {comments.map(comment => (
                             <li key={comment._id}>
-                                <p>{comment.username}: {comment.comment}</p>
+                            <p>Username: {comment.text}</p>
                             </li>
-                         ))
-                         : <p>No Comments for this Book</p>
-                        }
+                        ))}          
+                           
+                        {comments.length === 0 && <p>No Comments for this Book</p>}
+                       
+
+                      
                         </ul>
                     </div>
 
@@ -77,33 +80,26 @@ export default function BookDetails() {
                     <p className="vote-message">You've already voted for this book!</p>
                 </div> */}
 
-                <div className={styles["comment-form"]}>
+                {isAuthenticated && (
+                    <div className={styles["comment-form"]}>
                     <h2>Add a Comment</h2>
-                    <form method="post" onSubmit={commentSubmitHandler}>
-                        <label htmlFor="username">Name</label>
-                        <input 
-                            type="text" 
-                            id="username" 
-                            name="username" 
-                            placeholder="Name" 
-                            onChange={(e) => setUsername(e.target.value)}
-                            value={username}
-                        />
-
+                    <form method="post" onSubmit={submitHandler}>
+                        
                         <label htmlFor="comment">Comment</label>
                         <textarea 
                             id="comment" 
                             name="comment" 
                             rows="5" 
                             placeholder="Comment"
-                            onChange={(e) => setComment(e.target.value)}
-                            value={comment}
+                            value={values.comment}
+                            onChange={changeHandler}
                         ></textarea>
 
                         <input className={styles["submit-comment"]} type="submit" value="Submit comment" />    
                         {/* <button type="submit">Submit Comment</button> */}
                     </form>
                 </div>
+                )}
                 
             </div>
         </section>

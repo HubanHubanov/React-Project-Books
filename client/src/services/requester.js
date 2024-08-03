@@ -19,10 +19,9 @@ async function requester(method, url, data) {
     
    const response = await fetch(url, options);
 
-   
 //    if(response.status == 403) {
 //        localStorage.clear();
-    
+//        await logout();
 //     }   
 
    if(response.status === 204) {

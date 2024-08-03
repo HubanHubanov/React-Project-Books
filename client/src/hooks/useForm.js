@@ -6,14 +6,16 @@ export default function useForm (initialValues, submitCallback) {
     const changeHandler = (e) => {
         setValues(prevState => ({
             ...prevState,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value 
         }))
     }
 
     const submitHandler = (e) => {
         e.preventDefault();
-
+        
         submitCallback(values);
+        
+        setValues(initialValues);
     }
 
     return {

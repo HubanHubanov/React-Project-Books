@@ -1,6 +1,5 @@
 import * as request from "./requester";
 
-// const BASE_URL = "http://localhost:3030/jsonstore/books";
 const BASE_URL = "http://localhost:3030/data/books";
 
 export const getAll = async () => {

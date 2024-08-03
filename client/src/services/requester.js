@@ -1,10 +1,12 @@
+import { getAccessToken } from "../utils/authUtils";
+
 async function requester(method, url, data) {
     const options = {
         method,
         headers: {}
     };
 
-    const accessToken = localStorage.getItem("accessToken")
+    const accessToken = getAccessToken();
     
     if(data) {  
         options.headers["Content-Type"] = "application/json";

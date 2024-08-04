@@ -10,8 +10,9 @@ export const getAll = async () => {
     return books;
 }
 
-export const getOne =  (bookId) => {
-    const result =  request.get(`${BASE_URL}/${bookId}`)
+export const getOne = (bookId) => {
+    const result = request.get(`${BASE_URL}/${bookId}`)
+    
     return result;
 }
 
@@ -21,7 +22,9 @@ export const create = async (bookData) => {
     return createdBook;
 }
 
-export const del = (bookId) => request.del(`${BASE_URL}/${bookId}`)
+export const del = (bookId) => request.del(`${BASE_URL}/${bookId}`);
+
+export const update = (bookId, bookData) => request.put(`${BASE_URL}/${bookId}`, bookData);
 
 
                   

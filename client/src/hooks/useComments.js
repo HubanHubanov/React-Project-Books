@@ -12,7 +12,6 @@ export function useGetAllComments(bookId) {
     useEffect(() => {
         (async () => {
            const result = await commentsService.getAll(bookId);
-            console.log("useComments, allComents", result);
             
            setComments(result);   
         })();

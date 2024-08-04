@@ -23,12 +23,13 @@ export function useGetOneBook (bookId) {
     useEffect(() => {
         (async () => {
            const result = await booksService.getOne(bookId)
+           
             setBook(result)
         })();
     }, [bookId]); 
 
     return [
-        book,
+        book,   
         setBook
     ]
 }

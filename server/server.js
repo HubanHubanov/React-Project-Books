@@ -1375,7 +1375,18 @@
             "_createdOn": 1614935268135,
             "_id": "de6ad1db-1d3a-458f-93d4-aa6bf36f603d"
         }
-        }
+        },
+
+        comments: {
+    		"0a272c58-b7ea-4e09-a000-7ec988248f66": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			text: "Great book!",
+                email: "admin@abv.bg",
+    			bookId: "d953e5fb-a585-4d6b-92d3-ee90697398a0",
+    			_createdOn: 1614260681375,
+    			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
+    		}
+    	},
     	
     };
     var rules$1 = {

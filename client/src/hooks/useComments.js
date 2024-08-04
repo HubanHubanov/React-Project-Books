@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import * as commentsService from "../services/commentsService"
 
 export function useCreateComment() {
-    const createHandler = (bookId, comment) => commentsService.create(bookId, comment);    
+    const createHandler = (bookId, comment, email) => commentsService.create(bookId, comment, email);    
     return createHandler;
 }
 
@@ -11,10 +11,10 @@ export function useGetAllComments(bookId) {
 
     useEffect(() => {
         (async () => {
-            const result = await commentsService.getAll(bookId);
+           const result = await commentsService.getAll(bookId);
             console.log("useComments, allComents", result);
             
-            setComments(result);   
+           setComments(result);   
         })();
     }, [bookId])
 

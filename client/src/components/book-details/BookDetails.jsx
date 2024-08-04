@@ -7,7 +7,8 @@ import useForm from "../../hooks/useForm"
 import { useAuthContext } from "../../contexts/AuthContext";
 
 const initialValues = {
-    comment: ""
+    comment: "",
+    email: ""
 }
 
 export default function BookDetails() {
@@ -15,14 +16,14 @@ export default function BookDetails() {
     const [comments, setComments] = useGetAllComments(bookId); 
     const createComment = useCreateComment();
     const [book] = useGetOneBook(bookId);
-    const {isAuthenticated} = useAuthContext()
+    const {isAuthenticated, email} = useAuthContext()
 
     const {values, 
         changeHandler, 
         submitHandler
         } = useForm(initialValues, async ({comment}) => {
             try {
-              const newComment = await createComment(bookId, comment);
+              const newComment = await createComment(bookId, comment, email);
               
               setComments(oldComments => [...oldComments, newComment]);
                 
@@ -56,7 +57,7 @@ export default function BookDetails() {
 
                         {comments.map(comment => (
                             <li key={comment._id}>
-                            <p>Username: {comment.text}</p>
+                            <p>{comment.email}: {comment.text}</p>
                             </li>
                         ))}          
                            

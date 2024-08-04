@@ -11,7 +11,7 @@ export default function BookCatalogItem({
 }) {
     return (
         <div className={styles["column"]}>
-                <Link to={`/books/${_id}/details`} className="details-link">
+                <Link to={`/book/${_id}/details`} className="details-link">
                     <img src={imageUrl} />
                     <h3>{title}</h3>
                     <h4>Number of pages: {pages}</h4>

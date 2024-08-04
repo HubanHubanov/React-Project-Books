@@ -10,8 +10,8 @@ export const getAll = async () => {
     return books;
 }
 
-export const getOne = async (bookId) => {
-    const result = await request.get(`${BASE_URL}/${bookId}`)
+export const getOne =  (bookId) => {
+    const result =  request.get(`${BASE_URL}/${bookId}`)
     return result;
 }
 
@@ -19,8 +19,9 @@ export const create = async (bookData) => {
     const createdBook = await request.post(`${BASE_URL}`, bookData);
     
     return createdBook;
-
 }
+
+export const del = (bookId) => request.del(`${BASE_URL}/${bookId}`)
 
 
                   

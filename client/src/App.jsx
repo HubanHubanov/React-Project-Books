@@ -24,10 +24,10 @@ function App() {
 			<Route path="/auth/login" element={<Login />} />
 			<Route path="/auth/register" element={<Register />} />
 			<Route path="/auth/logout" element={<Logout/>}/>
-			<Route path="/books/create" element={<BookCreate />} />
-			<Route path="/books/:bookId/edit" element={<BookEdit />} />
-			<Route path="/books/:bookId/details" element={<BookDetails />}/>
-			<Route path="/books/catalog" element={<BookCatalog />} />
+			<Route path="/book/create" element={<BookCreate />} />
+			<Route path="/book/:bookId/edit" element={<BookEdit />} />
+			<Route path="/book/:bookId/details" element={<BookDetails />}/>
+			<Route path="/book/catalog" element={<BookCatalog />} />
 			<Route path="*" element={<PageNotFound />} />
 		</Routes>        
 

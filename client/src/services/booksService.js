@@ -10,6 +10,14 @@ export const getAll = async () => {
     return books;
 }
 
+export const getLatest = async () => {
+    const result = await request.get(`${BASE_URL}?sortBy=_createdOn%20desc&offset=0&pageSize=3`)
+
+    const latestBooks = Object.values(result);
+
+    return latestBooks;
+}
+
 export const getOne = (bookId) => {
     const result = request.get(`${BASE_URL}/${bookId}`)
     

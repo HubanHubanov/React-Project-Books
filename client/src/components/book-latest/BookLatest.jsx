@@ -1,12 +1,11 @@
 
 import styles from "./BookLatest.module.css"
 
-
-import { useGetAllBooks } from "../../hooks/useBooks";
+import { useGetLatestBooks } from "../../hooks/useBooks";
 import BookLatestItem from "./book-latest-item/BookLatestItem";
 
 export default function BookLatest() {
-    const [books] = useGetAllBooks()
+    const [books] = useGetLatestBooks()
 
     return (
         <div className={styles["background"]}>

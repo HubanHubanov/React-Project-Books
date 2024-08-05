@@ -13,9 +13,25 @@ export function useGetAllBooks () {
          
      }, []);
 
-     return [books, setBooks]
+     return [books, setBooks];
 }
 
+export function useGetLatestBooks () {
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            const latestBooks = await booksService.getLatest();
+            setBooks(latestBooks);
+        })();
+
+    }, [])
+
+    return[books, setBooks];
+}
+   
+
+ 
 
 export function useGetOneBook (bookId) {
     const [book, setBook] = useState( {

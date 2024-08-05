@@ -1346,7 +1346,7 @@
                 "genre": "Fantasy",
                 "pages": "223",
                 "published": "1997",
-                "imageUrl": "https://play-lh.googleusercontent.com/SF5BMT_IsoF7GBl4USjTr4CrNvXkFClA26qvzyKX6chRdGaXr6JDvnTVqO3wv2EF161VC2jD80YTedD-6HI",
+                "imageUrl": "https://musicart.xboxlive.com/7/5dbd5100-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080",
                 "description": "Harry makes close friends and a few enemies during his first year at the school. With the help of his friends, Ron Weasley and Hermione Granger, he faces an attempted comeback by the dark wizard Lord Voldemort, who killed Harry's parents but failed to kill Harry when he was just 15 months old.",
                 "_createdOn": 1722678441734,
                 "_id": "d953e5fb-a585-4d6b-92d3-ee90697398a0"

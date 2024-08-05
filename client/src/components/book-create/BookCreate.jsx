@@ -20,8 +20,6 @@ export default function BookCreate() {
 
     const createHandler = async (values) => {
         try {
-            
-            
             const createdBook = await createBook(values);
             
             navigate(`/book/${createdBook._id}/details`);
@@ -35,7 +33,9 @@ export default function BookCreate() {
         }
     }
 
-    const {values, changeHandler, submitHandler} = useForm(initialValues, createHandler);
+    const {values, 
+        changeHandler, 
+        submitHandler} = useForm(initialValues, createHandler);
 
     return (
    

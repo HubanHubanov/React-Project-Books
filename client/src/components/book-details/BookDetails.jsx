@@ -29,7 +29,6 @@ export default function BookDetails() {
               
               setComments(oldComments => [...oldComments, newComment]);
                 
-
             } catch (err) {
                 console.log(err.message);
                 //TODO: Show err message on the screen
@@ -37,16 +36,20 @@ export default function BookDetails() {
     });
 
     const bookDeleteHandler = async () => {
+        // const isConfirmed = confirm(`Are you sure you want to delete "${book.title}?"`)
+
+        // if(!isConfirmed) {
+        //     return console.log("cancel");
+        // }
 
         try {
             await bookService.del(bookId);
 
-            navigate("/book/catalog")
+            navigate("/book/catalog");
         } catch (err) {
             console.log(err.message);
             //TODO: Display err msg
-            
-        }
+             }
     }
 
     const isOwner = userId === book._ownerId;

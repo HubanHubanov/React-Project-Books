@@ -1,9 +1,9 @@
 
 import {Link} from "react-router-dom"
 
-import styles from "../../book-catalog/BookCatalog.module.css"
+import styles from "../../book-latest/BookLatest.module.css"
 
-export default function BookCatalogItem({
+export default function BookLatestItem({
     _id,
     title,
     pages,
@@ -17,6 +17,6 @@ export default function BookCatalogItem({
                     <h4>Number of pages: {pages}</h4>
                     <h1>Details</h1>
                 </Link>
-        </div>
+                </div>
     );
 }

@@ -1,10 +1,11 @@
 
-import styles from "./BookCatalog.module.css"
+import styles from "./BookLatest.module.css"
 
-import BookCatalogItem from "./book-catalog-item/BookCatalogItem";
+
 import { useGetAllBooks } from "../../hooks/useBooks";
+import BookLatestItem from "./book-latest-item/BookLatestItem";
 
-export default function BookCatalog() {
+export default function BookLatest() {
     const [books] = useGetAllBooks()
 
     return (
@@ -13,7 +14,7 @@ export default function BookCatalog() {
                 <section id="viewCatalog" className="background-img">
 
                     {books.length > 0
-                        ? books.map(book => <BookCatalogItem key={book._id} {...book}/>)
+                        ? books.map(book => <BookLatestItem key={book._id} {...book}/>)
                         : <div className={styles["no-books"]}>There are no Books</div>
                     }
                         

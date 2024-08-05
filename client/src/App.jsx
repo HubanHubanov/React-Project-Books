@@ -12,6 +12,7 @@ import BookCreate from "./components/book-create/BookCreate"
 import BookEdit from "./components/book-edit/BookEdit"
 import BookDetails from "./components/book-details/BookDetails"
 import Logout from "./components/logout/Logout"
+import BookLatest from "./components/book-latest/BookLatest"
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 			<Route path="/book/:bookId/edit" element={<BookEdit />} />
 			<Route path="/book/:bookId/details" element={<BookDetails />}/>
 			<Route path="/book/catalog" element={<BookCatalog />} />
+			<Route path="/book/latest" element={<BookLatest />} />
 			<Route path="*" element={<PageNotFound />} />
 		</Routes>        
 

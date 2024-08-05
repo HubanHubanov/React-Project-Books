@@ -11,6 +11,7 @@ export default function Header() {
                     <Link className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"  title="Toggle Navigation Menu"><i className="fa fa-bars"></i></Link>
                     <Link to="/" className="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</Link>
                     <Link to="/book/catalog" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Catalog</Link>
+                    <Link to="/book/latest" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Latest</Link>
 
                     {isAuthenticated 
                         ? ( 

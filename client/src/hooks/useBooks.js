@@ -18,7 +18,15 @@ export function useGetAllBooks () {
 
 
 export function useGetOneBook (bookId) {
-    const [book, setBook] = useState({});
+    const [book, setBook] = useState( {
+        title: "",
+        author: "",
+        genre: "",
+        pages: "",
+        published: "",
+        imageUrl: "",
+        description: ""
+    });
 
     useEffect(() => {
         (async () => {

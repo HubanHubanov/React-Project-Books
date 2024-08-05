@@ -16,10 +16,18 @@ export default function useForm (initialValues, submitCallback) {
 
     const submitHandler = async (e) => {
         e.preventDefault();
+
+        try {
+            await submitCallback(values);
         
-        await submitCallback(values);
+            setValues(initialValues);
+        } catch (err) {
+            //TODO: Err msg ?? not sure if need it here or in the next layer
+            console.log(err.message);
+            
+        }
         
-        setValues(initialValues);
+       
     }
 
     return {

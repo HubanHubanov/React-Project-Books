@@ -4,17 +4,6 @@ import useForm from "../../hooks/useForm";
 import { useGetOneBook } from "../../hooks/useBooks";
 import * as bookService from "../../services/booksService";
 
-
-const initialValues = {
-    title: "",
-    author: "",
-    genre: "",
-    pages: "",
-    published: "",
-    imageUrl: "",
-    description: ""
-}
-
 export default function BookEdit() {
     const {bookId} = useParams();
     const navigate = useNavigate();
@@ -23,9 +12,13 @@ export default function BookEdit() {
     const {values,
         changeHandler,
         submitHandler,
-    } = useForm(Object.assign(initialValues, book), async (values) => {
+    } = useForm(book, async (values) => {
         const updatedBook = await bookService.update(bookId, values);
         // setBook(updatedBook);
+        // const isConfirmed = confirm("Sure???????");
+        // if(!isConfirmed) {
+        //     return;
+        // }
         navigate(`/book/${bookId}/details`);
     });
 

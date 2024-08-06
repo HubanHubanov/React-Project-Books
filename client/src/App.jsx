@@ -13,6 +13,8 @@ import BookEdit from "./components/book-edit/BookEdit"
 import BookDetails from "./components/book-details/BookDetails"
 import Logout from "./components/logout/Logout"
 import BookLatest from "./components/book-latest/BookLatest"
+import UserGuard from "./components/guards/UserGuard"
+import GuestGuard from "./components/guards/GuestGuard"
 
 
 function App() {
@@ -21,16 +23,24 @@ function App() {
 		<Header/>
 
 		<Routes>
+			
 			<Route path="/" element={< Home />}/>
-			<Route path="/auth/login" element={<Login />} />
-			<Route path="/auth/register" element={<Register />} />
-			<Route path="/auth/logout" element={<Logout/>}/>
-			<Route path="/book/create" element={<BookCreate />} />
-			<Route path="/book/:bookId/edit" element={<BookEdit />} />
-			<Route path="/book/:bookId/details" element={<BookDetails />}/>
 			<Route path="/book/catalog" element={<BookCatalog />} />
 			<Route path="/book/latest" element={<BookLatest />} />
+			<Route path="/book/:bookId/details" element={<BookDetails />}/>
 			<Route path="*" element={<PageNotFound />} />
+			
+			<Route element={<UserGuard />}>
+				<Route path="/auth/login" element={<Login />} />
+				<Route path="/auth/register" element={<Register />} />
+			</Route>
+
+			<Route element={<GuestGuard />}>
+				<Route path="/book/create" element={<BookCreate />}/>
+				<Route path="/book/:bookId/edit" element={<BookEdit />} />
+			 	<Route path="/auth/logout" element={<Logout/>}/>
+			</Route>
+
 		</Routes>        
 
 		<Footer />

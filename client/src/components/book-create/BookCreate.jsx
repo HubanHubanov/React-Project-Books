@@ -106,7 +106,7 @@ export default function BookCreate() {
                     onChange={changeHandler}   
                 ></textarea>
 
-                <input type="submit" className="create" value="Add" />
+                <input type="submit" className={styles["create"]} value="Add" />
             </form>
         </section>
     

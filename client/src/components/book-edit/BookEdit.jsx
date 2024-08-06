@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
+import styles from "./BookEdit.module.css"
 
 import useForm from "../../hooks/useForm";
 import { useGetOneBook } from "../../hooks/useBooks";
@@ -88,7 +89,7 @@ export default function BookEdit() {
                 onChange={changeHandler} 
             ></textarea>
 
-            <input type="submit" className="create" value="Edit" />
+            <input type="submit" className={styles["edit"]} value="Edit" />
         </form>
     </section>
     );

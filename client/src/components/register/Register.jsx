@@ -29,7 +29,7 @@ export default function Register() {
     const {values, changeHandler, submitHandler} = useForm(initialValues, registerHandler);
 
     return (
-        <section id="register"> 
+        <section id="register" className={styles["register-section"]}> 
         <h2>Create your account:</h2>
         <form id="formRegister" onSubmit={submitHandler}>
             <label htmlFor="email">Email:</label>
@@ -67,7 +67,7 @@ export default function Register() {
                </div>
             )}
 
-            <input type="submit" className="register" value="Register" />
+            <input type="submit" className={styles["register"]} value="Register" />
         </form>
     </section>
     );

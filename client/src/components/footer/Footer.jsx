@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "../footer/Footer.module.css"
 
 export default function Footer() {
@@ -7,7 +8,7 @@ export default function Footer() {
                 <p>© 2024</p>
                 <p>All rights reserved</p>
                 <p>Page Created by Huban Hubanov</p>
-                    <a to="https://softuni.bg" target="_blank">SoftUni</a>
+                    <Link to="https://softuni.bg" target="_blank">SoftUni</Link>
             </div>
         </footer>
     );

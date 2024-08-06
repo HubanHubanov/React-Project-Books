@@ -26,7 +26,7 @@ export default function Login() {
 
     return (
         // <section className={styles["login"]}>
-        <section className="logn">
+        <section className={styles["login-section"]}>
             <h2>Login:</h2>
                 <form onSubmit={submitHandler}>
                    
@@ -55,7 +55,7 @@ export default function Login() {
                     </div>
                     )}
 
-                    <input type="submit" className="login" value="Login" />
+                    <input type="submit" className={styles["login"]} value="Login" />
                 </form>
         </section>
 

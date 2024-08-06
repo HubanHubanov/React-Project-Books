@@ -70,20 +70,17 @@ export default function BookDetails() {
                     <label htmlFor="description" className={styles["description"]}>Description:</label>
                     <p id="description" >{book.description}</p>
                     
-                    <div>
+                    <div >
                         <h2>Comments:</h2>
-                    
-                        <ul >                            
-
+                                                
                         {comments.map(comment => (
-                            <li key={comment._id}>
+                           
                             <p>{comment.email}: {comment.text}</p>
-                            </li>
+                           
                         ))}          
                            
                         {comments.length === 0 && <p>No Comments for this Book</p>}
-                       
-                        </ul>
+                        
                     </div>
 
                 </div>
@@ -91,19 +88,15 @@ export default function BookDetails() {
                  <div className={styles["buttons"]}>
                     {isOwner && (
                          <div className={styles["author"]}>
-                            <div>
+                             <div>
                                 <Link to={`/book/${bookId}/edit`} className={styles["btn-edit"]}>Edit</Link>
                             </div>
                             <div>
                                 <Link to={`/book/${bookId}/delete`} onClick={bookDeleteHandler} className={styles["btn-delete"]}>Delete</Link>
-                            </div>
+                            </div> 
                      </div>
                     )}
-                   
-
-                     {/* <Link to="#" className="btn-vote">Vote</Link>
-                    
-                    <p className="vote-message">You've already voted for this book!</p> */}
+                     
                 </div>  
 
                 {isAuthenticated && (

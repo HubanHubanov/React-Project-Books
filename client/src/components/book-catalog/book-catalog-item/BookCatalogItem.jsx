@@ -14,9 +14,9 @@ export default function BookCatalogItem({
                 <Link to={`/book/${_id}/details`} className="details-link">
                     <img src={imageUrl} />
                     <h3>{title}</h3>
-                    <h4>Number of pages: {pages}</h4>
+                    <p className={styles["pages"]}>Number of pages: {pages}</p>
                     <p className={styles["details-button"]}>Details</p>
                 </Link>
         </div>
-    );
+    );  
 }

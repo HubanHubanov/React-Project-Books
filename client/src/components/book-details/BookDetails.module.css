@@ -52,5 +52,14 @@
         border-left: 1px solid #CCCCCC; 
 }  
 
+.comments-part {
+    width:fit-content;
+  
+    margin: 20px auto 25px auto;
+    box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 16px;
+    margin-left: 50px;
+    color: white;
+}
 
 

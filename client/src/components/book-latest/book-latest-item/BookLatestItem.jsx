@@ -14,8 +14,8 @@ export default function BookLatestItem({
                 <Link to={`/book/${_id}/details`} className="details-link">
                     <img src={imageUrl} />
                     <h3>{title}</h3>
-                    <h4>Number of pages: {pages}</h4>
-                    <h1>Details</h1>
+                    <p className={styles["pages-num"]}>Number of pages: {pages}</p>
+                    <p className={styles["details-button"]}>Details</p>
                 </Link>
                 </div>
     );

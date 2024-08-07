@@ -70,17 +70,12 @@ export default function BookDetails() {
                     <label htmlFor="description" className={styles["description"]}>Description:</label>
                     <p id="description" >{book.description}</p>
                     
-                    <div >
-                        <h2>Comments:</h2>
-                                                
-                        {comments.map(comment => (
-                           
-                            <p key={book._id}>{comment.email}: {comment.text}</p>
-                           
+                    <div>
+                        <h2>Comments:</h2>                           
+                            {comments.map(comment => (
+                                <p className={styles["comments-part"]} key={book._id}>{comment.email}: {comment.text}</p>
                         ))}          
-                           
-                        {comments.length === 0 && <p>No Comments for this Book</p>}
-                        
+                            {comments.length === 0 && <p>No Comments for this Book</p>}   
                     </div>
 
                 </div>

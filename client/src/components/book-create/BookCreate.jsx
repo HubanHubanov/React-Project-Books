@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useCreateBook } from "../../hooks/useBooks";
 import useForm from "../../hooks/useForm";
 import styles from "./BookCreate.module.css"
+import { useState } from "react";
 
 const initialValues = {
     title: "",
@@ -17,18 +18,21 @@ const initialValues = {
 export default function BookCreate() {
     const navigate = useNavigate();
     const createBook = useCreateBook();
+    const [error, setError] = useState("")
 
-    const createHandler = async (values) => {
+    const createHandler = async ({title, author, genre, pages, published, imageUrl, description}) => {
+            
+        if(!title || !author || !genre || !pages || !published || !imageUrl || !description) {
+           return setError("Fill all fields");
+        
+        }
+
         try {
             const createdBook = await createBook(values);
-            
             navigate(`/book/${createdBook._id}/details`);
 
-            // const { _id: bookId} = await createBook(values);
-            // navigate(`/books/${bookId}/details`);    
-
-            
         } catch (err) {
+            setError(err.message);
             console.log(err.message);
         }
     }
@@ -37,6 +41,7 @@ export default function BookCreate() {
         changeHandler, 
         submitHandler} = useForm(initialValues, createHandler);
 
+             
     return (
    
            <section id="addBook">
@@ -105,6 +110,13 @@ export default function BookCreate() {
                     value={values.description}
                     onChange={changeHandler}   
                 ></textarea>
+
+                
+            {/* {error && (
+               <div className={styles["error"]}>
+                {error}
+               </div>
+            )} */}
 
                 <input type="submit" className={styles["create"]} value="Add" />
             </form>

@@ -5,7 +5,6 @@ import { useGetOneBook } from "../../hooks/useBooks";
 import { useCreateComment, useGetAllComments} from "../../hooks/useComments";
 import useForm from "../../hooks/useForm"
 import { useAuthContext } from "../../contexts/AuthContext";
-import * as bookService from "../../services/booksService"
 
 const initialValues = {
     comment: "",
@@ -13,7 +12,6 @@ const initialValues = {
 }
 
 export default function BookDetails() {
-    const navigate = useNavigate();
     const {bookId} = useParams();
     const [comments, setComments] = useGetAllComments(bookId); 
     const createComment = useCreateComment();
@@ -35,22 +33,18 @@ export default function BookDetails() {
             }
     });
 
-    const bookDeleteHandler = async () => {
-        // const isConfirmed = confirm(`Are you sure you want to delete "${book.title}?"`)
+    // const bookDeleteHandler = async () => {
 
-        // if(!isConfirmed) {
-        //     return console.log("cancel");
-        // }
+    //     try {
+    //         // navigate("/modal")
+    //         await bookService.del(bookId);
 
-        try {
-            await bookService.del(bookId);
-
-            navigate("/book/catalog");
-        } catch (err) {
-            console.log(err.message);
-            //TODO: Display err msg
-             }
-    }
+    //         navigate("/book/catalog");
+    //     } catch (err) {
+    //         console.log(err.message);
+    //         //TODO: Display err msg
+    //          }
+    // }
 
     const isOwner = userId === book._ownerId;
 
@@ -92,7 +86,7 @@ export default function BookDetails() {
                                 <Link to={`/book/${bookId}/edit`} className={styles["btn-edit"]}>Edit</Link>
                             </div>
                             <div>
-                                <Link to={`/book/${bookId}/delete`} onClick={bookDeleteHandler} className={styles["btn-delete"]}>Delete</Link>
+                                <Link to={`/book/${bookId}/delete`}  className={styles["btn-delete"]}>Delete</Link>
                             </div> 
                      </div>
                     )}

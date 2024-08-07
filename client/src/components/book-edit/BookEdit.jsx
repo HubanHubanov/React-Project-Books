@@ -15,11 +15,7 @@ export default function BookEdit() {
         submitHandler,
     } = useForm(book, async (values) => {
         const updatedBook = await bookService.update(bookId, values);
-        // setBook(updatedBook);
-        // const isConfirmed = confirm("Sure???????");
-        // if(!isConfirmed) {
-        //     return;
-        // }
+       
         navigate(`/book/${bookId}/details`);
     });
 

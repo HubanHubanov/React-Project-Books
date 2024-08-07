@@ -15,13 +15,13 @@ import Logout from "./components/logout/Logout"
 import BookLatest from "./components/book-latest/BookLatest"
 import UserGuard from "./components/guards/UserGuard"
 import GuestGuard from "./components/guards/GuestGuard"
+import BookDelete from "./components/book-delete/BookDelete"
 
 
 function App() {
   return (
     <AuthContextProvider>
 		<Header/>
-
 		<Routes>
 			
 			<Route path="/" element={< Home />}/>
@@ -38,6 +38,7 @@ function App() {
 			<Route element={<GuestGuard />}>
 				<Route path="/book/create" element={<BookCreate />}/>
 				<Route path="/book/:bookId/edit" element={<BookEdit />} />
+				<Route path="/book/:bookId/delete" element={<BookDelete />} />
 			 	<Route path="/auth/logout" element={<Logout/>}/>
 			</Route>
 

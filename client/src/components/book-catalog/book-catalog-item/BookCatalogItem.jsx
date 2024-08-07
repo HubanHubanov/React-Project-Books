@@ -15,7 +15,7 @@ export default function BookCatalogItem({
                     <img src={imageUrl} />
                     <h3>{title}</h3>
                     <h4>Number of pages: {pages}</h4>
-                    <h1>Details</h1>
+                    <p className={styles["details-button"]}>Details</p>
                 </Link>
         </div>
     );

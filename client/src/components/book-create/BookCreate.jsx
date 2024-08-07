@@ -112,11 +112,11 @@ export default function BookCreate() {
                 ></textarea>
 
                 
-            {/* {error && (
+            {error && (
                <div className={styles["error"]}>
                 {error}
                </div>
-            )} */}
+            )}
 
                 <input type="submit" className={styles["create"]} value="Add" />
             </form>

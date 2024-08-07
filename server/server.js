@@ -1340,7 +1340,20 @@
     };
     var seedData = {
         books: {
+            "d1456469-64aa-47bd-99be-212366c3c2c1": {
+                "_ownerId": "9ccf5b87-803c-4dbe-9a4c-dab1879588ff",
+                "title": "The Catcher in the Rye ",
+                "author": "J. D. Salinger",
+                "genre": "Realistic fiction",
+                "pages": "234",
+                "published": "1951",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Catcher-in-the-rye-red-cover.jpg/800px-Catcher-in-the-rye-red-cover.jpg",            
+                "description": "The novel deals with themes of innocence, identity, belonging, loss, connection, sex, and depression. The main character, Holden Caulfield, has become an icon for teenage rebellion.",
+                "_createdOn": 1723029807663,
+                "_id": "d1456469-64aa-47bd-99be-212366c3c2c1"
+            },
             "d953e5fb-a585-4d6b-92d3-ee90697398a0": {
+                "_ownerId": "9ccf5b87-803c-4dbe-9a4c-dab1879588ff",
                 "title": "Harry Potter and the Philosopher's Stone",
                 "author": "J.K.Rowling",
                 "genre": "Fantasy",
@@ -1350,9 +1363,9 @@
                 "description": "Harry makes close friends and a few enemies during his first year at the school. With the help of his friends, Ron Weasley and Hermione Granger, he faces an attempted comeback by the dark wizard Lord Voldemort, who killed Harry's parents but failed to kill Harry when he was just 15 months old.",
                 "_createdOn": 1722678441734,
                 "_id": "d953e5fb-a585-4d6b-92d3-ee90697398a0"
-        
             },
             "d953e5fb-a585-4d6b-92d3-ee90697398a1": {
+                "_ownerId": "9ccf5b87-803c-4dbe-9a4c-dab1879588ff",
                 "title": "C# Fundamentals",
                 "author": "Svetlin Nakov",
                 "genre": "Education",
@@ -1365,13 +1378,14 @@
             },
             
         "de6ad1db-1d3a-458f-93d4-aa6bf36f603d": {
-            "title": "Test title",
-            "author": "Test author",
-            "genre": "Test genre",
-            "pages": "100",
-            "published": "2000",
-            "imageUrl": "https://cdn.pixabay.com/photo/2014/06/03/19/38/road-sign-361514_960_720.png",
-            "description": "Test description",
+            "_ownerId": "9ccf5b87-803c-4dbe-9a4c-dab1879588ff",
+            "title": "Solaris",
+            "author": "Stanisław Lem",
+            "genre": "Science fiction",
+            "pages": "204",
+            "published": "1970",
+            "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1656780285i/28770.jpg",
+            "description": " It follows a crew of scientists on a research station as they attempt to understand an extraterrestrial intelligence, which takes the form of a vast ocean on the titular alien planet. The novel is one of Lem's best-known works.",
             "_createdOn": 1614935268135,
             "_id": "de6ad1db-1d3a-458f-93d4-aa6bf36f603d"
         }

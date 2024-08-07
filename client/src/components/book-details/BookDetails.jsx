@@ -45,8 +45,14 @@ export default function BookDetails() {
     //         //TODO: Display err msg
     //          }
     // }
-
-    const isOwner = userId === book._ownerId;
+        console.log("userId", userId);
+        console.log("book", book);
+        
+        console.log("book._ownerId",book._ownerId);
+        
+        
+        const isOwner = userId === book?._ownerId;
+        console.log(isOwner);
 
     return (
         <section className={styles["details-info"]}>
@@ -69,7 +75,7 @@ export default function BookDetails() {
                                                 
                         {comments.map(comment => (
                            
-                            <p>{comment.email}: {comment.text}</p>
+                            <p key={book._id}>{comment.email}: {comment.text}</p>
                            
                         ))}          
                            
@@ -79,7 +85,7 @@ export default function BookDetails() {
 
                 </div>
 
-                 <div className={styles["buttons"]}>
+                 {/* <div className={styles["buttons"]}> */}
                     {isOwner && (
                          <div className={styles["author"]}>
                              <div>
@@ -91,7 +97,7 @@ export default function BookDetails() {
                      </div>
                     )}
                      
-                </div>  
+                {/* </div>   */}
 
                 {isAuthenticated && (
                     <div className={styles["comment-form"]}>

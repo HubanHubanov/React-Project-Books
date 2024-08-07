@@ -26,9 +26,13 @@
      
 }
 
+    /* .buttons {
+        display: flex;
+    } */
+
  .btn-edit {
        float: left;
-       margin-left: 800px;
+       margin-left: 830px;
        
        padding: 2px 6px 2px 6px;
        border-top: 1px solid #CCCCCC;
@@ -39,7 +43,7 @@
 
 .btn-delete {
         float: right;
-        margin-right:800px;
+        margin-right:830px;
 
         padding: 2px 6px 2px 6px;
         border-top: 1px solid #CCCCCC;

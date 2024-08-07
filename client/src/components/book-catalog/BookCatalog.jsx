@@ -5,7 +5,7 @@ import BookCatalogItem from "./book-catalog-item/BookCatalogItem";
 import { useGetAllBooks } from "../../hooks/useBooks";
 
 export default function BookCatalog() {
-    const [books] = useGetAllBooks()
+    const [books] = useGetAllBooks();
 
     return (
         <div className={styles["background"]}>

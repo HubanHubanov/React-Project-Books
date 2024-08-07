@@ -6,8 +6,13 @@ export function useGetAllBooks () {
 
     useEffect(() => {
         (async () => {
-             const allBooks = await booksService.getAll();
-             setBooks(allBooks);
+            try {
+                const allBooks = await booksService.getAll();
+                setBooks(allBooks);
+            } catch (err) {
+                console.log(err.message);
+                
+            }
             
         })()
          
@@ -21,8 +26,13 @@ export function useGetLatestBooks () {
 
     useEffect(() => {
         (async () => {
-            const latestBooks = await booksService.getLatest();
-            setBooks(latestBooks);
+            try {
+                const latestBooks = await booksService.getLatest();
+                setBooks(latestBooks);
+            } catch (err) {
+                console.log(err.message);
+                
+            }
         })();
 
     }, [])

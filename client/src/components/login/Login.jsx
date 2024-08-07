@@ -18,7 +18,6 @@ export default function Login() {
            navigate("/")
         } catch (err) {
             setError(err.message)
-           console.log(err.message);
         }
        };
 

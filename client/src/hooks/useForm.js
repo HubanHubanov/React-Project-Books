@@ -22,7 +22,6 @@ export default function useForm (initialValues, submitCallback) {
         
             setValues(initialValues);
         } catch (err) {
-            //TODO: Err msg ?? not sure if need it here or in the next layer
             console.log(err.message);
             
         }

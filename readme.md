@@ -1,40 +1,13 @@
-# games-play-may-2024
-SoftUni React Course Project
+Thhi is a Single Page Application created with ReactJS and Vite and using the SoftUni Practice Server
 
-## 1. Initialize Project
-- [x] Initialize first repo
-- [x] Add softuni practice server
-- [x] Add vite react project as client and clean it up
-- [x] Add external css links in index.html
-- [x] Create html(jsx) components
-    - Header
-    - Home
-    - Footer
-    - Login
-    - Register
-    - PageNotFound
-    - Create
-    - Edit
-    - Catalog
-## 2. React Router
-- [x] Install and setup react-router-domm
-- [x] Add routes in App.jsx
-- [x] Add links in the navigation
-## 3. Create Service Layer
-- [x] Abstract requester
-- [x] Add games api
-- [] Preseed practice server
-## 4. Page Implementations
-- [] Game list
-- [] Details
-  - [] Details link
-  - [] Details route
-  - [] Api function - getOne
-- [] Home - Latest Games
-## 5. Comments (Advanced)
-- [] Create service for nested resource `comments`
-- [] Post comment to server
-- [] Read comments from server
-- [] Add comments in the component
-- [] Clear form
+The app is a book database and supports several functionalities.
+
+We have registered users and not regoistered users. 
+
+Not registered users can look at the catalog of the books and read all the comments about the books. They can also see the page with the last books which shows last 3 added books. For every book there is information about it's name, author, genre, number of pages, year of publush and a description. Guest can not comment on books
+Not logged in users can do it with email and password.
+
+Once registered or logged in user can create books and cooment on them. The user who is owner of the post can also edit it and delete it. He can also comment on other people posts and on own posts as well.
+
+Thank you and enjoy browsing through my book database.
 

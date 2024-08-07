@@ -29,30 +29,10 @@ export default function BookDetails() {
                 
             } catch (err) {
                 console.log(err.message);
-                //TODO: Show err message on the screen
             }
     });
-
-    // const bookDeleteHandler = async () => {
-
-    //     try {
-    //         // navigate("/modal")
-    //         await bookService.del(bookId);
-
-    //         navigate("/book/catalog");
-    //     } catch (err) {
-    //         console.log(err.message);
-    //         //TODO: Display err msg
-    //          }
-    // }
-        console.log("userId", userId);
-        console.log("book", book);
-        
-        console.log("book._ownerId",book._ownerId);
-        
         
         const isOwner = userId === book?._ownerId;
-        console.log(isOwner);
 
     return (
         <section className={styles["details-info"]}>

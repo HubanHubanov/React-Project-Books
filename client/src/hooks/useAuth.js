@@ -39,8 +39,6 @@ export const useLogout = () => {
             await logout();
             localLogout();
         } catch (err) {
-            console.log("err");
-            
             console.log(err.message);
             
             localStorage.clear();

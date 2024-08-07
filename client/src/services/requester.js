@@ -21,8 +21,6 @@ async function requester(method, url, data) {
    const response = await fetch(url, options);
 
    if(response.status == 403) {
-    console.log("requester");
-    
        localStorage.clear();
        
     }   

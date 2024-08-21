@@ -1,5 +1,4 @@
 import { getAccessToken } from "../utils/authUtils";
-import { login } from "./authService";
 
 async function requester(method, url, data) {
     const options = {

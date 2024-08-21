@@ -24,7 +24,6 @@ export default function Login() {
     const {values, changeHandler, submitHandler} = useForm(initialValues, loginHandler);
 
     return (
-        // <section className={styles["login"]}>
         <section className={styles["login-section"]}>
             <h2>Login:</h2>
                 <form onSubmit={submitHandler}>

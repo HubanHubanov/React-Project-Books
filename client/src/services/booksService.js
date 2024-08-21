@@ -24,7 +24,7 @@ export const getOne = (bookId) => {
     return result;
 }
 
-export const create = async (bookData) => {
+export const    create = async (bookData) => {
     const createdBook = await request.post(`${BASE_URL}`, bookData);
     
     return createdBook;

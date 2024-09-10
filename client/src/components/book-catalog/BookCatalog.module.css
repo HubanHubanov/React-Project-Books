@@ -1,8 +1,11 @@
 .column {
-    float: left;
+    display: inline-block;
     width: 33.33%;
     padding: 5px;
+  
   }
+
+ 
   
   .row::after {
     content: "";

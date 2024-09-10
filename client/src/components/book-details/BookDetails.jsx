@@ -70,6 +70,7 @@ export default function BookDetails() {
                                 <Link to={`/book/${bookId}/delete`}  className={styles["btn-delete"]}>Delete</Link>
                             </div> 
                      </div>
+                     
                     )}
                      
                 {/* </div>   */}
